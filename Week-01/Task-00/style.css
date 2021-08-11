@@ -1,0 +1,67 @@
+.fbox {
+    width: auto;
+    height: 75px;
+    background-color: #080808;
+}
+
+.logoBox {
+    width: 150px;
+    height: 10 px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    background-color: #6e7992;
+    float: left;
+    color: rgba(163, 154, 154, 0.856);
+    margin: 10px 10px 0 150px;
+}
+
+.homeBox {
+    width: 150px;
+    height: 10px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    background-color: #6e7992;
+    float: left;
+    color: rgba(163, 154, 154, 0.856);
+    margin: 10px 10px 0 700px;
+}
+
+.aboutBox {
+    width: 150px;
+    height: 10px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    background-color: #6e7992;
+    float: left;
+    color: rgba(163, 154, 154, 0.856);
+    margin: 10px 0 0 50px;
+}
+
+.portfolioBox {
+    width: 150px;
+    height: 10px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    background-color: #6e7992;
+    float: left;
+    color: rgba(163, 154, 154, 0.856);
+    margin: 10px 0 0 50px;
+}
+
+.contactBox {
+    width: 150px;
+    height: 10px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    background-color: #6e7992;
+    float: left;
+    color: rgba(163, 154, 154, 0.856);
+    margin: 10px 0 0 50px;
+}
+
+.main img{
+    width: 1888px;
+    height: 850px;
+    float: auto;
+    padding: 0 0 0 0;
+}

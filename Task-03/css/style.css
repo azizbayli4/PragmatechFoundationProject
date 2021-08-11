@@ -1,0 +1,26 @@
+img{
+    max-width: 100%;
+}
+
+.textA h3{
+    background-color: rgb(178, 178, 185);
+}
+
+.textA p{ 
+    background-color: rgb(231, 227, 221);
+    text-align: left;
+}
+
+.text h2, h3{
+background-color: gray;
+text-align: center;
+ }
+
+ .text p{
+     background-color: honeydew;
+     text-align: left;
+ }
+
+.text span{
+    background-color: rgb(226, 241, 226);
+}
