@@ -18,10 +18,6 @@ body {
   margin: 0;
 }
 
-.x-navbar {
-  margin-left: 10%;
-}
-
 .x-navbar ul li {
   list-style: none;
   padding: 10px 20px;
