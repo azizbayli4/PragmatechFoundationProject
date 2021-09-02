@@ -1,5 +1,5 @@
 //ededler=[12,45,23,67,89,1,17,90]
-let nums = [12, 15, 23, 67, 89, 1152, 17, 90];
+let nums = [12, 15, 23, 67, 89, 1102, 17, 90];
 
 //1.Ededler massivində 3-ə bölünüb 5-ə bölünməyən ədədləri ekrana çap edin
 
