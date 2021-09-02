@@ -29,11 +29,14 @@ console.log("------------------------");
 
 //3.Massivin cut yerdə duran elementlərinin cəmini tapın
 
+let sum = 0;
 for (let i = 0; i < nums.length; i++) {
   if (i % 2 == 0 && i !== 0) {
+    sum += nums[i];
     console.log(nums[i] + " in position:" + i);
   }
 }
+console.log("Total: " + sum);
 
 console.log("------------------------");
 
