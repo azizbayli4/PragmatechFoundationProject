@@ -12,8 +12,9 @@ b = c;
 console.log(a);
 console.log(b);
 
-//    //after research
-//   //first way
+//after research
+
+//first way
 // let a;
 // let b;
 
@@ -22,7 +23,7 @@ console.log(b);
 // console.log(a);
 // console.log(b);
 
-//   //second way
+//second way
 // let a = 1;
 // let b = 2;
 
@@ -35,7 +36,6 @@ console.log(b);
 
 //a++ və ++a arasındakı fərq
 //code example
-
 var x = 10;
 var y = 20;
 //pre-increment operator
