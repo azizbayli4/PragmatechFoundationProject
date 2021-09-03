@@ -1,5 +1,5 @@
 //ededler=[12,45,23,67,89,1,17,90]
-let nums = [12, 15, 23, 67, 89, 1102, 17, 90];
+let nums = [12, 15, 23, 67, 89, 331, 17, 90];
 
 //1.Ededler massivində 3-ə bölünüb 5-ə bölünməyən ədədləri ekrana çap edin
 
@@ -16,7 +16,7 @@ console.log("------------------------");
 for (let i = 0; i < nums.length; i++) {
   let x = parseInt(nums[i] / 10);
   let y = nums[i] % 10;
-  if (x >= 10) {
+  while (x >= 10) {
     x = parseInt(x / 10);
     x += x;
   }
