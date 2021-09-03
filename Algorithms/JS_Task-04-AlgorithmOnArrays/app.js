@@ -11,19 +11,19 @@ for (let i = 0; i < nums.length; i++) {
 
 console.log("------------------------");
 
-//2.Rəqəmlərinin cəmi 6 dan böyük olan ədədləri göstərin
+//2.Rəqəmlərinin cəmi 6 dan böyük olan ədədləri göstərin    //Buna daha sonra yeniden baxacam
 
-for (let i = 0; i < nums.length; i++) {
-  let x = parseInt(nums[i] / 10);
-  let y = nums[i] % 10;
-  while (x >= 10) {
-    x = parseInt(x / 10);
-    x += x;
-  }
-  if (x + y > 6) {
-    console.log(nums[i] + " in position:" + i);
-  }
-}
+// for (let i = 0; i < nums.length; i++) {
+//   let x = parseInt(nums[i] / 10);
+//   let y = nums[i] % 10;
+//   while (x >= 10) {
+//     x = parseInt(x / 10);
+//     x += x;
+//   }
+//   if (x + y > 6) {
+//     console.log(nums[i] + " in position:" + i);
+//   }
+// }
 
 console.log("------------------------");
 
