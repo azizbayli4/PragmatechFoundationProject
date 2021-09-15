@@ -1,0 +1,15 @@
+.color-box {
+  width: 1200px;
+}
+
+.color-box-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  margin: 10px auto;
+  height: 300px;
+  width: 250px;
+  background-color: gray;
+}
