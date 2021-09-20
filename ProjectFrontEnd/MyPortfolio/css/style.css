@@ -244,6 +244,9 @@ span {
   width: 100%;
   overflow: hidden;
 }
+.portfolio-item {
+  padding: 1.5rem;
+}
 
 .portfolio-item img,
 .blog-item img {
@@ -335,10 +338,6 @@ span {
   transform: scale(1.4);
 }
 
-/* .card-body:hover {
-  color: #c49b66;
-} */
-
 .r-button {
   padding: 0.85rem;
   background-color: #c49b66;
@@ -358,7 +357,6 @@ span {
 #Contact {
   overflow: hidden;
   position: relative;
-  /* height: 100vh; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.797), rgba(0, 0, 0, 0.5)),
     url("../images/cover-image-4.jpg");
   background-size: cover;
@@ -438,10 +436,6 @@ footer p {
 }
 
 @media (max-width: 575.98px) {
-  /* #J-coverImg {
-    background-image: none;
-    background-color: black;
-  } */
   #J-about .row {
     padding: 1.25rem;
   }
@@ -456,6 +450,17 @@ footer p {
 }
 
 @media (max-width: 750px) {
+  #Contact input,
+  textarea,
+  select {
+    padding: 0.9rem 1.8rem;
+    width: calc(100% - 0.05rem);
+  }
+
+  #Contact .container-fluid {
+    padding: 0.5rem;
+  }
+
   .navbar {
     display: none;
   }
