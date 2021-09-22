@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="image-gallery">
+      <div class="image-frame">
+        <img src="images/Breaking-Bad-Heisenberg.jpg" alt="" />
+      </div>
+      <div class="image-thumbs">
+        <div class="thumb" onclick="changeImage(this)">
+          <img
+            src="images/AAAABeq9Fg04r6qPCr1dq7VKOglPPuluLbGBoyy60tgKnh9KsXWh5Y2VaY7jDWhrl4QQV1NhshZxCtLJrM_3V_WJc5J0p-eW.jpg"
+            alt=""
+          />
+        </div>
+        <div class="thumb" onclick="changeImage(this)">
+          <img src="images/Breaking-Bad-Heisenberg.jpg" alt="" />
+        </div>
+        <div class="thumb" onclick="changeImage(this)">
+          <img src="images/breakingbad_amc.jpg" alt="" />
+        </div>
+        <div class="thumb" onclick="changeImage(this)">
+          <img src="images/zddchmvm-1380482556.jpg" alt="" />
+        </div>
+      </div>
+      <div class="splide">
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev" onclick="changeImage(this)">
+                Prev
+            </button>
+            <button class="splide__arrow splide__arrow--next" onclick="changeImage(this)">
+                Next
+            </button>
+        </div>
+    
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

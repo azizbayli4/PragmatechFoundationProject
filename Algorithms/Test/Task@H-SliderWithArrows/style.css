@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.image-gallery {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.image-thumbs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.thumb {
+  width: 25%;
+  margin: 10px;
+  height: 150px;
+  cursor: pointer;
+}
+
+.thumb img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: all 0.3s ease;
+}
+
+.thumb:hover img {
+  filter: brightness(100%);
+}
+
+.splide__arrows {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -1,0 +1,9 @@
+.box {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: indigo;
+  transition-duration: 0.115s;
+  /* transition: cubic-bezier(1, 0, 0, 1); */
+}

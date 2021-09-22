@@ -1,7 +1,0 @@
-.circle {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background-color: indigo;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
