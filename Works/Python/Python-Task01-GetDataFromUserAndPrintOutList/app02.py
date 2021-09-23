@@ -1,4 +1,3 @@
-
 userList = []
 
 while True:
