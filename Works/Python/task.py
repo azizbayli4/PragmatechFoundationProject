@@ -25,14 +25,12 @@ def addBook():
     name = input('Name: ')
     author = input('Author: ')
     page = input('Page: ')
-    try:
-        page = int(page)
-    except ValueError:
-        print('Please enter valid type of input(integer)!')
-        for book in books:
-            if page == book.page:
-                books.remove(book)
-        addBook()
+
+    page = int(page)
+     for book in books:
+          if page == book.page:
+              books.remove(book)
+      addBook()
 
     book = Book(id, name, author, page)
     book.adToList()
