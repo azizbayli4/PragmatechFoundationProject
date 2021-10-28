@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Links -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- OWS Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <!-- Title -->
+    <title>Javad</title>
+  </head>
+  <body>
+    <!-- Mobile Menu Start -->
+    <div class="topnav" id="myTopnav">
+      <a href="#J-coverImg"> <i class="fas fa-code"></i> <b>Javad</b></a>
+      <a href="#J-coverImg">Home</a>
+      <a href="#J-about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#Testimonials">Testimonials</a>
+      <a href="#myBlog">Blog</a>
+      <a href="#Contact">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <!-- Mobile Menu End -->
+    
+    <!-- Navbar Start -->
+    <section id="J-navbar" style="position: sticky; top: 0; z-index: 100">
+      <div class="container-fluid">
+        <div class="navbar justify-content-around">
+          <div class="logo">
+            <a href="#J-coverImg"> <i class="fas fa-code"></i> <b>Javad</b></a>
+          </div>
+          <ul class="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="#J-coverImg">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#J-about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#myBlog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Navbar End -->
+
+    <!-- Main Start -->
+    <section id="J-coverImg">
+      <div class="container-fluid">
+        <div class="coverImg">
+          <h1 class="ml2"> I Love Coding <br> I am A Software Developer</h1>
+        </div>
+      </div>
+    </section>
+    <!-- Main End -->
+
+    <!-- About Start -->
+    <section id="J-about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="Hero">
+              <img src="../static/images/{{aboutitem.image}}">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="content">
+              <h3 class="">
+                <!-- About me -->
+                {{aboutitem.title}}
+                <div class="under-lines">
+                  <div class="under-line left-line"></div>
+                  <div class="under-line right-line"></div>
+                </div>
+              </h3>
+              <p>
+                {{aboutitem.text}}
+              </p>
+            </div>
+            <div
+              class="
+                socialBar
+                d-flex
+                p-xxl-0
+                mt-xxl-2
+                mb-xxl-2
+              "
+            >
+              <a href="{{aboutitem.linkedin}}"> <i class="fab fa-linkedin-in"></i> </a>
+              <a href="{{aboutitem.github}}"> <i class="fab fa-github"></i> </a>
+              <!-- <a href="{{aboutitem.linkedin}}"> <i class="fab fa-instagram"></i> </a> -->
+              <a href="{{aboutitem.fb}}"> <i class="fab fa-facebook-f"></i> </a>
+              <!-- <a href="{{aboutitem.twitter}}"> <i class="fab fa-twitter"></i> </a> -->
+            </div>
+          <!-- <div class="cv" style="margin-top: 1.95rem;">
+             <span class="buttoN text-center">
+               <a href="">Download CV</a>
+            </span>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="header d-print-grid justify-content-center">
+             <h1 class="d-flex justify-content-center">My Portfolio</h1>
+             <i class="fas fa-briefcase d-flex justify-content-center"></i>
+            </div>
+         </div>
+         <div class="row mt-5">
+                {% for portwork in portfolio %}
+                  <div class="col-lg-6">
+                      <div class="portfolio-item">
+                          <div class="img-frame">
+                             <a href="{{portwork.link}}"><img src="../static/images/{{portwork.image}}"></a> 
+                          </div>
+                          <h2 class="my-2">{{portwork.title}}</h2>
+                      </div>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="col-lg-12 text-center mt-5">
+                <!-- <span class="buttoN mt-4">
+                  <a href="#">View all</a>
+                </span> -->
+              </div>
+            </div>
+         </div>
+       </div>
+    </section>
+    <!-- Portfolio End -->
+
+    <!-- Testimonials Start -->
+    <section id="Testimonials" class="section-padding">
+        <div class="container">
+            <div class="row" style="justify-content: center;">
+            <div class="header d-print-grid justify-content-center">
+              <h1 class="d-flex justify-content-center">Testimonials</h1>
+              <i class="fas fa-comments d-flex justify-content-center"></i>
+            </div>
+                <div class="col-md-offset-2 col-md-8 ">
+                    <div id="testimonial-slider" class="owl-carousel">
+                      {% for testimonialitem in testimonial %}
+                        <div class="testimonial">
+                            <p class="description">
+                              {{testimonialitem.text}}
+                            </p>
+                            <h3 class="title">{{testimonialitem.name}}</h3>
+                            <span class="post">{{testimonialitem.job}}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials End -->
+
+    <!-- Blog Start -->
+    <section id="myBlog" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="header d-print-grid justify-content-center">
+            <h1 class="d-flex justify-content-center">My Blog</h1>
+            <i class="fas fa-align-center d-flex justify-content-center"></i>
+           </div>
+        </div>
+             <div class="row mt-5">
+               {% for blogitem in blog %}
+               <div class="col-lg-4">
+                 <div class="blog-item">
+                   <div class="img-frame">
+                    <img src="../static/images/{{blogitem.image}}">
+                  </div>
+                       <div class="card-body">
+                         <h5 class="card-title">{{blogitem.title}}</h5>
+                         <p class="card-text">{{blogitem.text}}</p>
+                         <a href="{{blogitem.link}}" class="r-button mt-3">Read</a>
+                      </div>
+                 </div>
+                </div>
+                {% endfor %}
+              </div>
+    </section>
+    <!-- Contact Start -->
+    <section id="Contact" class="section-padding">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="contact-form p-4">
+                    <form action = "" method="post">
+                        <div class="container-fluid">
+                            <div class="row my-2">
+                              <form action="" method="post" class="">
+                                 {{form.csrf_token}} 
+                                <div class="form-group">
+                                    {{form.name(class="mt-5")}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.email(class="mt-5")}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.message(class="mt-5")}}
+                                </div>
+                                {{form.submit(class="mt-5")}}
+                            </form> 
+                            </div>
+                    </form>
+                </div>
+             </div>
+         </div>
+     </div>
+    </section>
+    <!-- Contact End -->
+    <!-- Footer Start -->
+    <footer>
+      <p>© Javad Azizbayli 2021</p>
+    </footer>
+    <!-- Footer End -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script src="{{url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

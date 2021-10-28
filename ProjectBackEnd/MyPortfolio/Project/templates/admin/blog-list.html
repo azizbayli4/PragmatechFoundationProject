@@ -1,0 +1,39 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Manage Blog <a href="{{url_for('add_blog')}}"><button type="button"  class="btn btn-success float-right"
+                data-toggle="modal">Add New Blog</button> </h2></a>
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Text</th>
+                        <th>Link</th>
+                        <th>Image</th>
+                    </tr>
+                    {% for blogitem in blog %}
+                    <tr>
+                        <td>{{blogitem.id}}</td>
+                        <td>{{blogitem.title}}</td>
+                        <td>{{blogitem.text}}</td>
+                        <td>{{blogitem.link}}</td>
+                        <td>{{blogitem.image|truncate(15)}}</td>
+                        <td>
+                            <a href="{{url_for('edit_blog', id=blogitem.id)}}" class="btn btn-info btn-xs">Edit</a>
+                            <a href="{{url_for('delete_blog', id=blogitem.id)}}" class="btn btn-danger btn-xs" 
+                            onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

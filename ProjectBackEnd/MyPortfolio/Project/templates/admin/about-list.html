@@ -1,0 +1,47 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Manage About <a href="{{url_for('add_about')}}"><button type="button"  class="btn btn-success float-right"
+                data-toggle="modal">Add New About</button> </h2></a>
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Text</th>
+                        <th>Image</th>
+                        <th>Linkedin</th>
+                        <th>Github</th>
+                        <!-- <th>Instagram</th> -->
+                        <th>Facebook</th>
+                        <!-- <th>Twitter</th> -->
+                    </tr>
+                    {% for aboutitem in about %}
+                    <tr>
+                        <td>{{aboutitem.id}}</td>
+                        <td>{{aboutitem.title}}</td>
+                        <td>{{aboutitem.text}}</td>
+                        <td>{{aboutitem.linkedin}}</td>
+                        <td>{{aboutitem.github}}</td>
+                        <!-- <td>{{aboutitem.ig}}</td> -->
+                        <td>{{aboutitem.fb}}</td>
+                        <!-- <td>{{aboutitem.twitter}}</td> -->
+                        <td>{{aboutitem.image|truncate(15)}}</td>
+                        <td>
+                            <a href="{{url_for('edit_about', id=aboutitem.id)}}" class="btn btn-info btn-xs">Edit</a>
+                            <a href="{{url_for('delete_about', id=aboutitem.id)}}" class="btn btn-danger btn-xs" 
+                            onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
