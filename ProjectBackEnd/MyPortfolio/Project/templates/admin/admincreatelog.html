@@ -11,8 +11,8 @@
  <!----------------------------------- Login Add Start ------------------------------------------->
 
       <div class=" d-flex flex-column  mx-4  my-3">
-          <div class="bg-info d-flex  justify-content-center text-light px-2 py-3">
-            Log in Add
+          <div class= "bg-info d-flex  justify-content-center text-light px-2 py-3" style="background-color: #343a40 !important" >
+            Sign up
           </div>
           <div>
             <form class="row" method="POST" >
@@ -20,7 +20,7 @@
                   <!-- Login Start -->
                   <div class="col-12">
                     {{form.csrf_token}}
-                    {{form.login(class="form-control my-3",placeholder="Log in")}}
+                    {{form.login(class="form-control my-3",placeholder="Name")}}
                   </div>
                   <!-- Login End-->
 
@@ -31,7 +31,7 @@
                   <!-- Password End-->
 
                   <div class="col-12 d-flex  justify-content-center my-2">
-                    <button class="btn btn-info btn-block btn-primary" type="submit">Add info</button>
+                    <button class="btn btn-info btn-block btn-primary" type="submit">Add admin</button>
                   </div>
 
             </form>

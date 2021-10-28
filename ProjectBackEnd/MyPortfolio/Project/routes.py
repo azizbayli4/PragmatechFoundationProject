@@ -5,6 +5,7 @@ from . models import About,Portfolio, Testimonial,Blog,Contact,Admin
 from Project import app,db,os,bcrypt,login_manager
 from . forms import ContactForm,Adminlogin
 from flask_login import login_user,login_required,logout_user
+from flask_login import logout_user
 
 
 @app.route('/')
@@ -32,7 +33,7 @@ def portfolio():
 ############################################ About #########################################################
 
 @app.route('/admin/add-about', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def add_about():
     if request.method == 'POST':
         file = request.files['file']
@@ -44,9 +45,7 @@ def add_about():
           image = filename, 
           linkedin = request.form.get('linkedin'),
           github = request.form.get('github'),
-        #   ig = request.form.get('ig'),
           fb = request.form.get('fb')
-        #   twitter = request.form.get('twitter')
         )
         db.session.add(aboutitem)
         db.session.commit()
@@ -55,14 +54,14 @@ def add_about():
 
 
 @app.route('/admin/about-list')
-# @login_required
+@login_required
 def admin_about_list():
     about = About.query.all()
     return render_template('admin/about-list.html', about=about)
 
 
 @app.route('/admin/edit-about/<int:id>/', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def edit_about(id):
     aboutitem = About.query.get_or_404(id)
     if request.method == 'POST':
@@ -82,7 +81,7 @@ def edit_about(id):
 
 
 @app.route('/admin/delete-about/<int:id>', methods=['GET','POST'])
-# @login_required
+@login_required
 def delete_about(id):
     aboutitem = About.query.get_or_404(id)
     db.session.delete(aboutitem)
@@ -122,15 +121,15 @@ def admin_portfolio_list():
 def edit_portfolio(id):
     portwork = Portfolio.query.get_or_404(id)
     if request.method == 'POST':
-        file = request.files['file']
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        # file = request.files['file']
+        # filename = secure_filename(file.filename)
+        # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         portwork.title = request.form.get('title')
         portwork.link = request.form.get('link')
-        portwork.image = filename
+        # portwork.image = filename
         db.session.commit()
-        return redirect(url_for('portfolio'))
+        return redirect(url_for('admin_portfolio_list'))
     return render_template('admin/edit-portfolio.html', portwork=portwork)
 
 
@@ -140,7 +139,7 @@ def delete_portfolio(id):
     portwork = Portfolio.query.get_or_404(id)
     db.session.delete(portwork)
     db.session.commit()
-    return redirect(url_for('portfolio'))
+    return redirect(url_for('admin_portfolio_list'))
 
 
 ############################################ Testimonial #########################################################
@@ -176,7 +175,7 @@ def edit_testimonial(id):
         testimonialitem.name = request.form.get('name')
         testimonialitem.job = request.form.get('job')
         db.session.commit()
-        return redirect(url_for('portfolio'))
+        return redirect(url_for('admin_testimonial_list'))
     return render_template('admin/edit-testimonial.html', testimonialitem=testimonialitem)
 
 
@@ -186,7 +185,7 @@ def delete_testimonial(id):
     testimonialitem = Testimonial.query.get_or_404(id)
     db.session.delete(testimonialitem)
     db.session.commit()
-    return redirect(url_for('portfolio'))
+    return redirect(url_for('admin_testimonial_list'))
 
 
 ############################################ Blog #########################################################
@@ -222,16 +221,16 @@ def admin_blog_list():
 def edit_blog(id):
     blogitem = Blog.query.get_or_404(id)
     if request.method == 'POST':
-        file = request.files['file']
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        # file = request.files['file']
+        # filename = secure_filename(file.filename)
+        # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         blogitem.title = request.form.get('title')
         blogitem.text = request.form.get('text')
         blogitem.link = request.form.get('link')
-        blogitem.image = filename
+        # blogitem.image = filename
         db.session.commit()
-        return redirect(url_for('portfolio'))
+        return redirect(url_for('admin_blog_list'))
     return render_template('admin/edit-blog.html', blogitem=blogitem)
 
 
@@ -241,13 +240,13 @@ def delete_blog(id):
     blogitem = Blog.query.get_or_404(id)
     db.session.delete(blogitem)
     db.session.commit()
-    return redirect(url_for('portfolio'))
+    return redirect(url_for('admin_blog_list'))
 
 
 ############################################ Contact #########################################################
 
-@app.route('/contact', methods=['GET', 'POST'])
-@login_required
+@app.route('/', methods=['GET', 'POST'])
+# @login_required
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
@@ -258,8 +257,8 @@ def contact():
         )
         db.session.add(contact)
         db.session.commit()
-        return redirect('portfolio')
-    return render_template('contact.html', form=form)
+        return redirect(url_for('portfolio'))
+    return render_template('/', form=form)
 
 
 @app.route('/admin/contact-list')
@@ -275,7 +274,7 @@ def delete_contact(id):
     form = Contact.query.get_or_404(id)
     db.session.delete(form)
     db.session.commit()
-    return redirect(url_for('delete_contact'))
+    return redirect(url_for('admin_contact_list'))
 
 
 ############################################ Admin #########################################################
@@ -289,23 +288,18 @@ def login():
         if user and bcrypt.check_password_hash(user.password,form.password.data):
             login_user(user)
             return redirect(url_for('admin_about_list'))
-
-
         return redirect(url_for('login'))
-
     return render_template('admin/login.html',addata=form)
 
 
-@app.route("/admin/main/logout")
-@login_required
+@app.route("/admin/logout")
 def logout():
-
     logout_user()
-    return redirect(url_for('login'))    
+    return redirect(url_for('portfolio'))   
 
 
 @app.route("/admin/loginadd",methods=['GET','POST'])
-# @login_required
+@login_required
 def loginadd():
     
     form=Adminlogin()

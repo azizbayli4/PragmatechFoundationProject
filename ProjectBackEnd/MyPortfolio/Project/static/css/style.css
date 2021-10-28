@@ -1,5 +1,5 @@
 .html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body {
@@ -9,7 +9,9 @@ body {
 .section-padding {
   padding: 100px 0;
 }
-
+h1,i{
+  color: #eee;
+}
 /* Navbar Start */
 
 /* Mobile Navbar Start */
@@ -142,9 +144,18 @@ body {
 /* Main End */
 
 /* About Start */
+
+.Hero{
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 500px;
+}
+
 .Hero img {
   width: 100%;
+  height: 100%;
   overflow: hidden;
+
 }
 #J-about {
   background-color: #131414;
@@ -177,11 +188,11 @@ body {
 .content p {
   padding: 0px 10rem 1rem 0rem;
   color: #a3a3a3;
-  font-weight: 400;
+  font-size: 1rem;
 }
 
 .socialBar a {
-  margin-left: 0.85rem;
+  margin-left: 1rem;
   text-decoration: none;
 }
 
@@ -204,8 +215,8 @@ body {
 
 .buttoN a {
   border-radius: 0.25rem;
-  margin-left: 1rem;
-  padding: 0.85rem;
+  margin-left: 0.85rem;
+  padding: 1rem;
   background-color: #c49b66;
   color: #eee;
   text-decoration: none;
@@ -232,9 +243,6 @@ body {
   font-size: 2rem;
 }
 
-* {
-  transition: all 0.3s ease;
-}
 h2,
 span {
   color: #eee;
@@ -243,19 +251,23 @@ span {
   color: #eee !important;
 }
 
-.img-frame {
-  width: 100%;
-  overflow: hidden;
-}
 .portfolio-item {
   padding: 1.5rem;
 }
 
-.portfolio-item img {
+.portfolio-item .img-frame {
   width: 100%;
-  object-fit: contain;
+  overflow: hidden;
+  /* height: 100%; */
+  height: 350px;
+}
+
+.portfolio-item img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: all 0.3s ease;
-  /* height: 600px; */
 }
 
 .portfolio-item:hover img {
@@ -264,7 +276,7 @@ span {
 
 .portfolio-item:hover h2 {
   color: #c49b66;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 /* Portfolio End */
 
@@ -299,6 +311,11 @@ span {
   top: 0;
   left: -15px;
 }
+
+.testimonial .description {
+  color:#eee;
+}
+
 .testimonial .title {
   color: #eee;
   font-size: 24px;
@@ -334,7 +351,7 @@ span {
 
 .blog-item {
   height: auto;
-  margin: 50 0 0 20px;
+  margin-top: 50px;
   max-width: 420px;
 }
 
@@ -448,8 +465,18 @@ footer p {
     margin-top: 1.5rem;
   }
 }
-
+@media (min-width: 575px) and (max-width: 1158px){
+  .ml2 {
+    font-size: 1.15rem;
+  }
+}
 @media (max-width: 575.98px) {
+.Hero{
+  height: 300px;
+}
+.ml2 {
+  font-size: 1rem;
+}
   #J-about .row {
     padding: 1.25rem;
   }
@@ -461,6 +488,9 @@ footer p {
   #myBlog .row {
     padding: 1.25rem;
   }
+  .portfolio-item .img-frame {
+    height: 180px;
+  }
 }
 
 @media (max-width: 750px) {
@@ -469,6 +499,10 @@ footer p {
   select {
     padding: 0.9rem 1.8rem;
     width: calc(100% - 0.05rem);
+  }
+
+  .Hero{
+    height: 350px;
   }
 
   #Contact .container-fluid {
@@ -520,8 +554,25 @@ footer p {
   }
 
   .socialBar a {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
+}
+
+@media (min-width: 750px) and (max-width: 770px) {
+  .Hero{
+    height: 650px;
+  }
+  .content p{
+    padding-right: 3rem;
+  }
+  .socialBar a {
+    margin-left: 5rem;
+    text-decoration: none;
+}
+.cv{
+  margin-left: 15rem;
+}
+
 }
 
 /* Responsive Content End */

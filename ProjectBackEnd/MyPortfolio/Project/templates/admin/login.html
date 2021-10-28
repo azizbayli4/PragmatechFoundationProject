@@ -14,31 +14,27 @@
     <link rel="stylesheet" type="text/css" href="../../static/css/login.css">
 
   </head>
-  <body class="p-0 m-0">
-
-
-
+  <body class="p-0 m-0" style="background-color: #343a40;">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-2"></div>
             <div class="col-lg-6 col-md-8 login-box">
-                <div class="col-lg-12 login-key">
+                <div class="col-lg-12 login-key" style="color: white;">
                     <i class="fas fa-key"></i>
                 </div>
-                <div class="col-lg-12 login-title">
+                <div class="col-lg-12 login-title" style="color: white;">
                     ADMIN PANEL
                 </div>
-                
                 <div class="col-lg-12 login-form">
                     <div class="col-lg-12 login-form">
                         <form method="POST">
                             <div class="form-group">
-                                <label na class="form-control-label">Log In</label>
+                                <label style="color: white;" na class="form-control-label">Log In</label>
                                 {{addata.csrf_token}}
                                 {{addata.login(autocomplete="off",class="form-control mt-3")}}
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label">Password</label>
+                                <label style="color: white;" class="form-control-label">Password</label>
                                 {{addata.password(class="form-control",autocomplete="off mt-3")}}
                             </div>
 
