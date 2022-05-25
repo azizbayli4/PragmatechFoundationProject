@@ -65,16 +65,12 @@ def admin_about_list():
 def edit_about(id):
     aboutitem = About.query.get_or_404(id)
     if request.method == 'POST':
-        # file = request.files['file']
-        # filename = secure_filename(file.filename)
-        # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         aboutitem.title = request.form.get('title')
         aboutitem.text = request.form.get('text')
         aboutitem.linkedin = request.form.get('linkedin')
         aboutitem.github = request.form.get('github')
         aboutitem.fb = request.form.get('fb')
-        # aboutitem.image = filename
         db.session.commit()
         return redirect(url_for('portfolio'))
     return render_template('admin/edit-about.html', aboutitem=aboutitem)
@@ -121,13 +117,9 @@ def admin_portfolio_list():
 def edit_portfolio(id):
     portwork = Portfolio.query.get_or_404(id)
     if request.method == 'POST':
-        # file = request.files['file']
-        # filename = secure_filename(file.filename)
-        # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         portwork.title = request.form.get('title')
         portwork.link = request.form.get('link')
-        # portwork.image = filename
         db.session.commit()
         return redirect(url_for('admin_portfolio_list'))
     return render_template('admin/edit-portfolio.html', portwork=portwork)
@@ -221,14 +213,10 @@ def admin_blog_list():
 def edit_blog(id):
     blogitem = Blog.query.get_or_404(id)
     if request.method == 'POST':
-        # file = request.files['file']
-        # filename = secure_filename(file.filename)
-        # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         blogitem.title = request.form.get('title')
         blogitem.text = request.form.get('text')
         blogitem.link = request.form.get('link')
-        # blogitem.image = filename
         db.session.commit()
         return redirect(url_for('admin_blog_list'))
     return render_template('admin/edit-blog.html', blogitem=blogitem)

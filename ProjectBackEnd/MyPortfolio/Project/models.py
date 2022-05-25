@@ -14,7 +14,6 @@ class About(db.Model):
     linkedin=db.Column(db.String(100))
     github=db.Column(db.String(100))
     fb=db.Column(db.String(100))
-    # twitter=db.Column(db.String(100))
 
     def __repr__(self):
         return f'About me: {self.title}'

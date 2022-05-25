@@ -17,7 +17,6 @@
                         <th>Linkedin</th>
                         <th>Github</th>
                         <th>Facebook</th>
-                        <!-- <th>Twitter</th> -->
                     </tr>
                     {% for aboutitem in about %}
                     <tr>
@@ -27,7 +26,6 @@
                         <td>{{aboutitem.linkedin}}</td>
                         <td>{{aboutitem.github}}</td>
                         <td>{{aboutitem.fb}}</td>
-                        <!-- <td>{{aboutitem.twitter}}</td> -->
                         <td>{{aboutitem.image|truncate(15)}}</td>
                         <td>
                             <a href="{{url_for('edit_about', id=aboutitem.id)}}" class="btn btn-info btn-xs">Edit</a>
